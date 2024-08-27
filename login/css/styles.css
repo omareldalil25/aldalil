@@ -1,0 +1,31 @@
+body {
+    background: #000000;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #000000);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #434343, #000000);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.container {
+    margin-top: 50px;
+}
+
+
+/* هذه الخاصية تملأ الصفحة بالكامل وتستخدم Flexbox */
+#logo-container {
+    display: flex;
+    justify-content: center;
+    /* توسيط أفقي */
+    align-items: center;
+    /* توسيط عمودي */
+    height: 40vh;
+    /* يملأ الارتفاع الكامل للصفحة */
+}
+
+#logo-img {
+    width: 300px;
+    /* يمكنك تعديل هذا الحجم حسب الحاجة */
+    height: auto;
+}
