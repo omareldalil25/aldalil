@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title># اتكلم فرنساوي</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background: #000000;
+            background: -webkit-linear-gradient(to right, #434343, #000000);
+            background: linear-gradient(to right, #434343, #000000);
+        }
+
+        .navbar {
+            background-color: #ffffff;
+        }
+
+        .navbar-brand {
+            padding-left: 20px;
+        }
+
+        .navbar-nav {
+            margin-left: auto;
+            padding-right: 50px;
+        }
+
+        .navbar-brand img {
+            height: 60px;
+        }
+
+        .nav-link {
+            font-size: 16px;
+            color: #000;
+        }
+
+        .nav-link i {
+            margin-right: 5px;
+        }
+
+        @media (max-width: 767px) {
+            .navbar-nav {
+                text-align: center;
+                padding-right: 0;
+            }
+        }
+
+        /* Image Boxes */
+        .image-boxes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .image-box {
+            text-align: center;
+            max-width: 300px;
+            width: 100%;
+        }
+
+        .image-box img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid #fff;
+        }
+
+        .image-box img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="../starting/starting.html">
+            <img src="../starting/aa.png" alt="Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="../login/login.html">
+                        <i class="fas fa-user"></i> تسجيل الدخول
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <!-- Image Boxes -->
+        <div class="image-boxes">
+            <!-- Google Drive Image Box -->
+            <div class="image-box">
+                <img src="../images/drive.jpg" alt="Drive Image"
+                    onclick="window.location.href='https://drive.google.com/file/d/1cOKlaJH8i0EtW1M0hW5RkUzd9eI7bBS3/view?usp=sharing';">
+            </div>
+
+            <!-- YouTube Video Image Boxes -->
+            <div class="image-box">
+                <img src="../images/video1.jpg" alt="Video Image 1"
+                    onclick="showVideo('https://www.youtube.com/embed/jnpglzxc1NY');">
+            </div>
+            <div class="image-box">
+                <img src="../images/video2.jpg" alt="Video Image 2"
+                    onclick="showVideo('https://www.youtube.com/embed/PRTqdxswaq0');">
+            </div>
+            <div class="image-box">
+                <img src="../images/video3.jpg" alt="Video Image 3"
+                    onclick="showVideo('https://www.youtube.com/embed/PnkpUBQSYY8');">
+            </div>
+            <div class="image-box">
+                <img src="../images/video4.jpg" alt="Video Image 4"
+                    onclick="showVideo('https://www.youtube.com/embed/1HpDN7V_040');">
+            </div>
+            <div class="image-box">
+                <img src="../images/video5.jpg" alt="Video Image 5"
+                    onclick="showVideo('https://www.youtube.com/embed/_4r7rRZVWIo');">
+            </div>
+            <div class="image-box">
+                <img src="../images/video6.jpg" alt="Video Image 6"
+                    onclick="showVideo('https://www.youtube.com/embed/40G8teaCdp0');">
+            </div>
+            <div class="image-box">
+                <img src="../images/video7.jpg" alt="Video Image 7"
+                    onclick="showVideo('https://www.youtube.com/embed/EnXoKi67PKU');">
+            </div>
+            <div class="image-box">
+                <img src="../images/video8.jpg" alt="Video Image 8"
+                    onclick="showVideo('https://www.youtube.com/embed/zu8ia5ZZGGo');">
+            </div>
+            <div class="image-box">
+                <img src="../images/video9.jpg" alt="Video Image 9"
+                    onclick="showVideo('https://www.youtube.com/embed/b0Rys7kcn9I');">
+            </div>
+            <div class="image-box">
+                <img src="../images/video10.jpg" alt="Video Image 10"
+                    onclick="showVideo('https://www.youtube.com/embed/');">
+            </div>
+            <!-- Add more image boxes as needed -->
+        </div>
+
+        <!-- Video Modal -->
+        <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="videoModalLabel">Lesson Video</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" id="lessonVideo" src="" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function showVideo(videoSrc) {
+            document.getElementById('lessonVideo').src = videoSrc;
+            $('#videoModal').modal('show');
+        }
+
+        $('#videoModal').on('hide.bs.modal', function () {
+            document.getElementById('lessonVideo').src = '';
+        });
+    </script>
+</body>
+
+</html>
