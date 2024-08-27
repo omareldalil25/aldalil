@@ -16,17 +16,15 @@ body {
     position: relative;
 }
 
-/* Mobile Viewport */
-@media (max-width: 768px) {
-    #logo-img {
-        width: 150px; /* Adjust the logo size for mobile */
-        top: 0;
-        margin: 0 auto; /* Ensure the logo is centered */
+@keyframes drop {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
     }
 
-    #skip-btn {
-        top: 10px;
-        right: 10px;
+    100% {
+        transform: translateY(0);
+        opacity: 1;
     }
 }
 
@@ -36,6 +34,26 @@ body {
     position: relative;
     top: 20px;
     animation: drop 1s ease-out;
+}
+
+#typing-text {
+    font-size: 1.2rem;
+    margin-top: 0;
+    font-family: 'Baloo Bhaijaan', cursive;
+    color: #03346E;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid;
+    animation: caret 0.75s steps(1) infinite;
+    max-width: 100%;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+@keyframes caret {
+    50% {
+        border-color: transparent;
+    }
 }
 
 #skip-btn {
@@ -52,4 +70,25 @@ body {
     justify-content: center;
     align-items: center;
     transition: all 0.5s ease;
+}
+
+#skip-btn i {
+    font-size: 20px;
+    color: #000;
+}
+
+/* Media query for mobile devices */
+@media screen and (max-width: 600px) {
+    #logo-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+    }
+
+    #logo-img {
+        top: 0;
+        transform: translateY(0); /* Remove offset */
+    }
 }
