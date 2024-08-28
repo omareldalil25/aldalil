@@ -198,6 +198,17 @@
                 text-align: center;
             }
         }
+
+        @media (max-width: 767px) {
+            .video-container iframe {
+                cursor: pointer;
+            }
+
+            .video-container iframe:active {
+                transform: scale(1.5);
+                transition: transform 0.3s ease;
+            }
+        }
     </style>
 </head>
 
@@ -253,7 +264,8 @@
             <span style="color: white; font-size: 18px; display: inline-block;">
                 اذا كنت مشترك بالفعل قم بتسجيل الدخول من هنا
             </span>
-            <a href="../login/login.html" class="btn btn-primary login-btn" style="display: inline-block; background-color: #EB3678; border-color: #EB3678; margin-right: 5px;">
+            <a href="../login/login.html" class="btn btn-primary login-btn"
+                style="display: inline-block; background-color: #EB3678; border-color: #EB3678; margin-right: 5px;">
                 تسجيل الدخول
             </a>
         </div>
